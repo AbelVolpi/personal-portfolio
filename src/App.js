@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Briefcase, GraduationCap, Code, User, BookOpen, ExternalLink } from 'lucide-react';
+import { Briefcase, GraduationCap, Code, User, BookOpen, ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -106,13 +106,13 @@ const Portfolio = () => {
       date: "Sep, 2023",
       url: "https://medium.com/@abelvolpi/como-utilizar-startfragmentforresult-no-seu-projeto-8a656bf892fe"
     },
-     {
+    {
       title: "Utilizando Kotlin Generics & abstract classes para reduzir a redundância de Fragments com ViewBinding",
       excerpt: "Um dos principais problemas que nós desenvolvedores sempre tentamos (mas nem sempre conseguimos) evitar em nossos projetos, é o chamado ‘boilerplate code’...",
       date: "Jun, 2023",
       url: "https://medium.com/@abelvolpi/utilizando-kotlin-generics-abstract-classes-para-reduzir-a-redund%C3%A2ncia-de-fragments-com-260fa5afb582"
     },
-     {
+    {
       title: "Automatizando processos através de GitHooks",
       excerpt: "Já parou pra pensar o que grandes projetos têm em comum? Certamente uma das semelhanças é a grande quantidade de processos necessários...",
       date: "Jan, 2023",
@@ -126,30 +126,56 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className={`text-2xl font-bold text-blue-400 transition-all duration-1000 ${
-              hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            }`}>
-              Abel Volpi
-            </h1>
+            <div className="flex items-center gap-4">
+              <h1 className={`text-2xl font-bold text-blue-400 transition-all duration-1000 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+                }`}>
+                Abel Volpi
+              </h1>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/AbelVolpi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github size={20} />
+                </a>
+                <a
+                  href="https://linkedin.com/in/abelvolpi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="mailto:abelvolpi@gmail.com"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
+            </div>
             <div className="flex gap-6">
               <button
                 onClick={() => setActiveSection('about')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                  activeSection === 'about'
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'about'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                }`}
+                  }`}
               >
                 <User size={18} />
                 About Me
               </button>
               <button
                 onClick={() => setActiveSection('blog')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                  activeSection === 'blog'
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'blog'
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                }`}
+                  }`}
               >
                 <BookOpen size={18} />
                 Blog
@@ -171,8 +197,8 @@ const Portfolio = () => {
                   <h2 className="text-3xl font-bold">Summary</h2>
                 </div>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  I'm an experienced Mobile Software Engineer with over 4 years developing robust and 
-                  high-quality applications that reach over 60 million users. My primary expertise is the 
+                  I'm an experienced Mobile Software Engineer with over 4 years developing robust and
+                  high-quality applications that reach over 60 million users. My primary expertise is the
                   Android native ecosystem, but I also have experience in cross-platform with React Native and KMP. I'm passionate about technology and software engineering.
                 </p>
               </section>
