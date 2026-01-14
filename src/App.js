@@ -3,6 +3,11 @@ import { Briefcase, GraduationCap, Code, User, BookOpen, ExternalLink } from 'lu
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('about');
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  React.useEffect(() => {
+    setHasAnimated(true);
+  }, []);
 
   const workExperience = [
     {
@@ -121,7 +126,9 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className={`text-2xl font-bold text-blue-400 transition-all duration-1000 ${
+              hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
+            }`}>
               Abel Volpi
             </h1>
             <div className="flex gap-6">
