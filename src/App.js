@@ -163,8 +163,8 @@ const Portfolio = () => {
               <button
                 onClick={() => setActiveSection('about')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'about'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
                   }`}
               >
                 <User size={18} />
@@ -173,8 +173,8 @@ const Portfolio = () => {
               <button
                 onClick={() => setActiveSection('blog')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'blog'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
                   }`}
               >
                 <BookOpen size={18} />
@@ -196,11 +196,21 @@ const Portfolio = () => {
                   <User className="text-blue-400" size={28} />
                   <h2 className="text-3xl font-bold">Summary</h2>
                 </div>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  I'm an experienced Mobile Software Engineer with over 4 years developing robust and
-                  high-quality applications that reach over 60 million users. My primary expertise is the
-                  Android native ecosystem, but I also have experience in cross-platform with React Native and KMP. I'm passionate about technology and software engineering.
-                </p>
+                <div className="flex gap-8 items-start">
+                  {/* Photo */}
+                  <div className="flex-shrink-0">
+                    <img
+                      src="/profile.jpeg"
+                      alt="Abel Volpi"
+                      className="w-40 h-40 rounded-full object-cover border-4 border-blue-400 shadow-lg"
+                    />
+                  </div>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    I'm an experienced Mobile Software Engineer with over 4 years developing robust and
+                    high-quality applications that reach over 60 million users. My primary expertise is the
+                    Android native ecosystem, but I also have experience in cross-platform with React Native and KMP. I'm passionate about technology and software engineering.
+                  </p>
+                </div>
               </section>
 
               {/* Work Experience */}
