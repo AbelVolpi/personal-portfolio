@@ -200,7 +200,7 @@ const Portfolio = () => {
                   {/* Photo */}
                   <div className="flex-shrink-0">
                     <img
-                      src="/profile.jpeg"
+                      src="https://github.com/AbelVolpi.png"
                       alt="Abel Volpi"
                       className="w-40 h-40 rounded-full object-cover border-4 border-blue-400 shadow-lg"
                     />
