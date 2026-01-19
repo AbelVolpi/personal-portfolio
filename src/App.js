@@ -206,9 +206,12 @@ const Portfolio = () => {
                     />
                   </div>
                   <p className="text-gray-300 text-lg leading-relaxed">
-                    I'm an experienced Mobile Software Engineer with over 4 years developing robust and
+                    I'm a <b>Mobile Software Engineer</b> with over 4 years developing robust and
                     high-quality applications that reach over 60 million users. My primary expertise is the
-                    Android native ecosystem, but I also have experience in cross-platform with React Native and KMP. I'm passionate about technology and software engineering.
+                    <b> Android native</b> ecosystem, but I also have experience in cross-platform with <b>React Native</b> and <b>KMP</b>.
+                    <br/><br/>
+                     I'm passionate about technology and software engineering. Here you can find more about my
+                    professional journey, personal projects, and some of my technical articles.
                   </p>
                 </div>
               </section>
@@ -286,7 +289,7 @@ const Portfolio = () => {
                   <h2 className="text-3xl font-bold">Blog Posts</h2>
                 </div>
                 <p className="text-gray-400 mb-8">
-                  Explore my technical articles and insights about software engineering on Medium.
+                  My technical articles and insights about software engineering.
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {blogPosts.map((post, index) => (
