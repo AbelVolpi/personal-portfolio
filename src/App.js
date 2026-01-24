@@ -124,60 +124,62 @@ const Portfolio = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
       {/* Header/Navigation */}
       <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-4">
-              <h1 className={`text-2xl font-bold text-blue-400 transition-all duration-1000 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-                }`}>
+        <div className="max-w-6xl mx-auto px-4 py-3">
+          {/* Desktop*/}
+          <div className="hidden sm:flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <h1 className={`text-2xl font-bold text-blue-400 transition-all duration-1000 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
                 Abel Volpi
               </h1>
-              <div className="flex gap-3">
-                <a
-                  href="https://github.com/AbelVolpi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github size={20} />
+              <div className="flex gap-2">
+                <a href="https://github.com/AbelVolpi" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="GitHub">
+                  <Github size={18} />
                 </a>
-                <a
-                  href="https://linkedin.com/in/abelvolpi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} />
+                <a href="https://linkedin.com/in/abelvolpi" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={18} />
                 </a>
-                <a
-                  href="mailto:abelvolpi@gmail.com"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail size={20} />
+                <a href="mailto:abelvolpi@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Email">
+                  <Mail size={18} />
                 </a>
               </div>
             </div>
-            <div className="flex gap-6">
-              <button
-                onClick={() => setActiveSection('about')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'about'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  }`}
-              >
-                <User size={18} />
+            <div className="flex gap-3">
+              <button onClick={() => setActiveSection('about')} className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all text-sm ${activeSection === 'about' ? 'bg-blue-600 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}>
+                <User size={16} />
                 About Me
               </button>
-              <button
-                onClick={() => setActiveSection('blog')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeSection === 'blog'
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  }`}
-              >
-                <BookOpen size={18} />
+              <button onClick={() => setActiveSection('blog')} className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all text-sm ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}>
+                <BookOpen size={16} />
+                Blog
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile */}
+          <div className="sm:hidden">
+            <div className="flex justify-between items-center mb-3">
+              <h1 className={`text-xl font-bold text-blue-400 transition-all duration-1000 ${hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                Abel Volpi
+              </h1>
+              <div className="flex gap-3">
+                <a href="https://github.com/AbelVolpi" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="GitHub">
+                  <Github size={18} />
+                </a>
+                <a href="https://linkedin.com/in/abelvolpi" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={18} />
+                </a>
+                <a href="mailto:abelvolpi@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Email">
+                  <Mail size={18} />
+                </a>
+              </div>
+            </div>
+            <div className="flex gap-2 w-full">
+              <button onClick={() => setActiveSection('about')} className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg transition-all text-sm ${activeSection === 'about' ? 'bg-blue-600 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}>
+                <User size={16} />
+                About Me
+              </button>
+              <button onClick={() => setActiveSection('blog')} className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg transition-all text-sm ${activeSection === 'blog' ? 'bg-blue-600 text-white' : 'text-gray-300 hover:text-white hover:bg-gray-800'}`}>
+                <BookOpen size={16} />
                 Blog
               </button>
             </div>
@@ -186,53 +188,54 @@ const Portfolio = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-24 pb-12 px-6">
+      <main className="pt-28 sm:pt-24 pb-12 px-4 sm:px-6">
+
         <div className="max-w-6xl mx-auto">
           {activeSection === 'about' ? (
             <div className="space-y-12">
               {/* Summary */}
-              <section className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+              <section className="bg-gray-800/50 rounded-2xl p-4 sm:p-8 border border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <User className="text-blue-400" size={28} />
-                  <h2 className="text-3xl font-bold">Summary</h2>
+                  <User className="text-blue-400" size={24} />
+                  <h2 className="text-2xl sm:text-3xl font-bold">Summary</h2>
                 </div>
-                <div className="flex gap-8 items-start">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start">
                   {/* Photo */}
                   <div className="flex-shrink-0">
                     <img
                       src="https://github.com/AbelVolpi.png"
                       alt="Abel Volpi"
-                      className="w-40 h-40 rounded-full object-cover border-4 border-blue-400 shadow-lg"
+                      className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-blue-400 shadow-lg"
                     />
                   </div>
-                  <p className="text-gray-300 text-lg leading-relaxed">
+                  <p className="text-gray-300 text-base sm:text-lg leading-relaxed text-center sm:text-left">
                     I'm a <b>Mobile Software Engineer</b> with over 4 years developing robust and
                     high-quality applications that reach over 60 million users. My primary expertise is the
                     <b> Android native</b> ecosystem, but I also have experience in cross-platform with <b>React Native</b> and <b>KMP</b>.
-                    <br/><br/>
-                     I'm passionate about technology and software engineering. Here you can find more about my
+                    <br /><br />
+                    I'm passionate about technology and software engineering. Here you can find more about my
                     professional journey, personal projects, and some of my technical articles.
                   </p>
                 </div>
               </section>
 
               {/* Work Experience */}
-              <section className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+              <section className="bg-gray-800/50 rounded-2xl p-4 sm:p-8 border border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <Briefcase className="text-purple-400" size={28} />
-                  <h2 className="text-3xl font-bold">Work Experience</h2>
+                  <Briefcase className="text-purple-400" size={24} />
+                  <h2 className="text-2xl sm:text-3xl font-bold">Work Experience</h2>
                 </div>
                 <div className="space-y-6">
                   {workExperience.map((job, index) => (
-                    <div key={index} className="border-l-4 border-blue-500 pl-6 py-2">
-                      <h3 className="text-xl font-semibold text-white">{job.title}</h3>
-                      <p className="text-blue-400 font-medium">{job.company}</p>
-                      <p className="text-gray-400 text-sm mb-2">{job.period}</p>
-                      <p className="text-gray-300 mb-3">{job.description}</p>
+                    <div key={index} className="border-l-4 border-blue-500 pl-4 sm:pl-6 py-2">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white">{job.title}</h3>
+                      <p className="text-blue-400 font-medium text-sm sm:text-base">{job.company}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm mb-2">{job.period}</p>
+                      <p className="text-gray-300 mb-3 text-sm sm:text-base">{job.description}</p>
                       {job.bullets && (
                         <ul className="space-y-2">
                           {job.bullets.map((bullet, idx) => (
-                            <li key={idx} className="text-gray-300 flex items-start">
+                            <li key={idx} className="text-gray-300 flex items-start text-sm sm:text-base">
                               <span className="text-blue-400 mr-2 mt-1">•</span>
                               <span>{bullet}</span>
                             </li>
@@ -245,37 +248,36 @@ const Portfolio = () => {
               </section>
 
               {/* Education */}
-              <section className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+              <section className="bg-gray-800/50 rounded-2xl p-4 sm:p-8 border border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <GraduationCap className="text-green-400" size={28} />
-                  <h2 className="text-3xl font-bold">Education</h2>
+                  <GraduationCap className="text-green-400" size={24} />
+                  <h2 className="text-2xl sm:text-3xl font-bold">Education</h2>
                 </div>
                 <div className="space-y-6">
                   {education.map((edu, index) => (
-                    <div key={index} className="border-l-4 border-green-500 pl-6 py-2">
-                      <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
-                      <p className="text-green-400 font-medium">{edu.institution}</p>
-                      <p className="text-gray-400 text-sm mb-2">{edu.period}</p>
-                      <p className="text-gray-300">{edu.description}</p>
+                    <div key={index} className="border-l-4 border-green-500 pl-4 sm:pl-6 py-2">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white">{edu.degree}</h3>
+                      <p className="text-green-400 font-medium text-sm sm:text-base">{edu.institution}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm mb-2">{edu.period}</p>
+                      <p className="text-gray-300 text-sm sm:text-base">{edu.description}</p>
                     </div>
                   ))}
                 </div>
               </section>
-
               {/* Technologies and Tools */}
-              <section className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+              <section className="bg-gray-800/50 rounded-2xl p-4 sm:p-8 border border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <Code className="text-yellow-400" size={28} />
-                  <h2 className="text-3xl font-bold">Technologies and Tools</h2>
+                  <Code className="text-yellow-400" size={24} />
+                  <h2 className="text-2xl sm:text-3xl font-bold">Technologies and Tools</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   {technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="bg-gray-700/50 rounded-lg p-4 border border-gray-600 hover:border-blue-500 transition-all hover:transform hover:scale-105"
+                      className="bg-gray-700/50 rounded-lg p-3 sm:p-4 border border-gray-600 hover:border-blue-500 transition-all hover:transform hover:scale-105"
                     >
-                      <p className="font-semibold text-white">{tech.name}</p>
-                      <p className="text-sm text-gray-400">{tech.category}</p>
+                      <p className="font-semibold text-white text-sm sm:text-base">{tech.name}</p>
+                      <p className="text-xs sm:text-sm text-gray-400">{tech.category}</p>
                     </div>
                   ))}
                 </div>
@@ -283,31 +285,31 @@ const Portfolio = () => {
             </div>
           ) : (
             <div className="space-y-8">
-              <section className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+              <section className="bg-gray-800/50 rounded-2xl p-4 sm:p-8 border border-gray-700">
                 <div className="flex items-center gap-3 mb-6">
-                  <BookOpen className="text-blue-400" size={28} />
-                  <h2 className="text-3xl font-bold">Blog Posts</h2>
+                  <BookOpen className="text-blue-400" size={24} />
+                  <h2 className="text-2xl sm:text-3xl font-bold">Blog Posts</h2>
                 </div>
-                <p className="text-gray-400 mb-8">
+                <p className="text-gray-400 mb-8 text-sm sm:text-base">
                   My technical articles and insights about software engineering.
                 </p>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {blogPosts.map((post, index) => (
                     <a
                       key={index}
                       href={post.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gray-700/50 rounded-xl p-6 border border-gray-600 hover:border-blue-500 transition-all hover:transform hover:scale-105 group"
+                      className="bg-gray-700/50 rounded-xl p-4 sm:p-6 border border-gray-600 hover:border-blue-500 transition-all hover:transform hover:scale-105 group"
                     >
                       <div className="flex justify-between items-start mb-3">
-                        <span className="text-sm text-gray-400">{post.date}</span>
-                        <ExternalLink size={18} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
+                        <span className="text-xs sm:text-sm text-gray-400">{post.date}</span>
+                        <ExternalLink size={16} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
                       </div>
-                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {post.excerpt}
                       </p>
                     </a>
